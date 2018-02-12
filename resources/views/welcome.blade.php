@@ -1,95 +1,67 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+<head>
+    <meta name="csrf-token"
+          content="{{ csrf_token() }}">
+    <link rel="stylesheet"
+          href="{{ mix('css/app.css') }}">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700"
+          rel="stylesheet">
+</head>
+<body class="font-sans bg-grey-lighter">
+<div id="app">
+    <div class="h-screen w-full bg-red z-50 slide-menu-tray fixed"
+         :class="{'open': menuOpen}">
+        <span @click="menuOpen = false"
+              class="h-16 bg-white flex justify-end items-center text-3xl font-bold pr-4">&times</span>
+        <ul class="list-reset">
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white uppercase" to="/">Home</router-link></li>
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white uppercase" to="/about">About Drinks in Taichung</router-link></li>
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white uppercase" to="/map">Find a drink...</router-link></li>
+            <li class="bg-red-light flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white" to="/filters">Preferences</router-link></li>
+            <li class="bg-red-light flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white" to="/map">Location</router-link></li>
+            <li class="bg-red-light flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white" to="/list">Browse all</router-link></li>
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><router-link class="no-underline text-lg text-white uppercase" to="/request-establishment">Add your Establishment</router-link></li>
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><a class="no-underline text-lg text-white uppercase" href="#">Contact the Creators</a></li>
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><a class="no-underline text-lg text-white uppercase" href="#">I want this for my city</a></li>
+            <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><a class="no-underline text-lg text-white uppercase" href="#">I want this in Chinese</a></li>
+        </ul>
+    </div>
+    <div class="flex justify-between items-center border-b-4 h-16">
+        <span @click="menuOpen = true">
+            @include('svg.menu')
+        </span>
+        <div class="flex justify-end items-center">
+            <router-link to="/list"
+                         class="m-2 text-red-dark"
+                    {{--v-if="!is_home"--}}
+            >
+                @include('svg.browse')
+            </router-link>
+            <router-link to="/map"
+                         class="m-2 text-red-dark"
+            >
+                @include('svg.map_marker')
+            </router-link>
+            <router-link to="/filters"
+                         class="m-2 text-red-dark"
+                    {{--v-if="!is_home"--}}
+            >
+                @include('svg.filter')
+            </router-link>
         </div>
-    </body>
+
+        {{--<div @click="menuOpen = true"--}}
+             {{--class="m-2">--}}
+            {{--@include('svg.menu')--}}
+        {{--</div>--}}
+    </div>
+    <router-view></router-view>
+</div>
+<script src="{{ mix('js/app.js') }}"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.maps_key') }}&callback=initMap"></script>
+</body>
 </html>

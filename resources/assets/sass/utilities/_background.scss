@@ -1,0 +1,18 @@
+.bg-covered {
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-col {
+  background: $brand_primary;
+}
+
+.bg-light {
+  background: $brand_light;
+}
+
+.bg-blended-col {
+  background-color: $brand_primary;
+  background-blend-mode: multiply;
+}
+

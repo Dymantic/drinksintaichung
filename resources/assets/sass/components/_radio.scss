@@ -1,0 +1,21 @@
+.radio-component {
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  label:after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid;
+    background: white;
+    transition: .4s;
+  }
+
+  input[type=checkbox]:checked + label {
+    &:after {
+      background: currentColor;
+    }
+  }
+}

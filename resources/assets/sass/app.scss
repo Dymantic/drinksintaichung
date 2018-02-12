@@ -1,9 +1,22 @@
+@tailwind preflight;
 
+@tailwind utilities;
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
-
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "variables";
+//
+//@import "base";
+//
+//@import "utilities/display";
+//@import "utilities/typography";
+//@import "utilities/margins";
+//@import "utilities/padding";
+//@import "utilities/background";
+//@import "utilities/borders";
+//@import "utilities/constrains";
+//@import "utilities/misc";
+//@import "utilities/widths";
+//
+@import "components/radio";
+@import "components/slidemenu";

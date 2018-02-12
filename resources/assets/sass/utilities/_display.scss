@@ -1,0 +1,96 @@
+.block {
+  display: block;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.din {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-y {
+  align-items: center;
+}
+
+.flex-center-x {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-space {
+  justify-content: space-around;
+}
+
+.flex-spaced {
+  justify-content: space-between;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-split {
+  & > * {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    width: 50%;
+  }
+}
+
+.flex-static {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.flex-adapt {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.col-3 {
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-around;
+  grid-row-gap: map_get($sizes, 8);
+}
+
+.col-4 {
+  grid-template-columns: repeat(4, 22%);
+  justify-content: space-around;
+  grid-row-gap: map_get($sizes, 8);
+}
+
+.col-5 {
+  grid-template-columns: repeat(5, 18%);
+  justify-content: space-around;
+  grid-row-gap: map_get($sizes, 8);
+}
