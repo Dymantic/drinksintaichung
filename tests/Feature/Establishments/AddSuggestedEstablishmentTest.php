@@ -16,6 +16,13 @@ class AddSuggestedEstablishmentTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function setUp()
+    {
+        parent::setUp();
+
+        Notification::fake();
+    }
+
     /**
      *@test
      */
@@ -55,7 +62,6 @@ class AddSuggestedEstablishmentTest extends TestCase
      */
     public function a_notification_is_dispatched_when_a_suggestion_is_submitted()
     {
-        Notification::fake();
 
         $this->disableExceptionHandling();
 

@@ -20,7 +20,7 @@ class AddFeatureTest extends TestCase
         $this->disableExceptionHandling();
 
         $response = $this->asLoggedInUser()->json("POST", "/admin/features", $this->validFeatureAttributes());
-        $response->assertStatus(200);
+        $response->assertStatus(201);
 
         $this->assertDatabaseHas("features", $this->validFeatureAttributes());
     }
@@ -33,7 +33,7 @@ class AddFeatureTest extends TestCase
         $this->disableExceptionHandling();
 
         $response = $this->asLoggedInUser()->json("POST", "/admin/features", $this->validFeatureAttributes());
-        $response->assertStatus(200);
+        $response->assertStatus(201);
 
         $expected = array_merge(['id' => Feature::first()->id], $this->validFeatureAttributes());
         $this->assertArraySubset($expected, $response->decodeResponseJson());

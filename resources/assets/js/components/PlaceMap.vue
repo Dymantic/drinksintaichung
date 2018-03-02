@@ -33,7 +33,6 @@
                 map: null,
                 markers: [],
                 shown_place: {id: null, name: '', address: '', features: []},
-                default_center: {lat: 24.1333, lng: 120.6555},
                 default_zoom: 13,
             };
         },
@@ -49,6 +48,15 @@
 
             feature_list() {
                 return this.$store.getters.filterList;
+            },
+
+            default_center() {
+                if(this.$store.getters.has_location && this.$store.getters.user_region === "local") {
+                    const loc = this.$store.getters.location;
+                    return {lat: loc.latitude, lng: loc.longitude};
+                }
+
+                return {lat: 24.1333, lng: 120.6555};
             }
 
         },

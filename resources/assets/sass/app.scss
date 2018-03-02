@@ -20,3 +20,7 @@
 //
 @import "components/radio";
 @import "components/slidemenu";
+
+[v-cloak] {
+  display: none;
+}

@@ -29,14 +29,13 @@
             <li class="flex justify-center items-center border-b-2 border-w w-full h-12"><a class="no-underline text-lg text-white uppercase" href="#">I want this in Chinese</a></li>
         </ul>
     </div>
-    <div class="flex justify-between items-center border-b-4 h-16">
+    <div class="flex justify-between items-center border-b-4 h-16 pl-4">
         <span @click="menuOpen = true">
             @include('svg.menu')
         </span>
         <div class="flex justify-end items-center">
             <router-link to="/list"
                          class="m-2 text-red-dark"
-                    {{--v-if="!is_home"--}}
             >
                 @include('svg.browse')
             </router-link>
@@ -47,18 +46,20 @@
             </router-link>
             <router-link to="/filters"
                          class="m-2 text-red-dark"
-                    {{--v-if="!is_home"--}}
             >
                 @include('svg.filter')
             </router-link>
         </div>
 
-        {{--<div @click="menuOpen = true"--}}
-             {{--class="m-2">--}}
-            {{--@include('svg.menu')--}}
-        {{--</div>--}}
     </div>
     <router-view></router-view>
+    <modal v-cloak :show="showNotificationModal">
+        <div slot="body" class="flex flex-col justify-center items-center px-4 py-8">
+            <p class="text-lg font-bold text-red mb-8">@{{ notification.title }}</p>
+            <p class="text-grey-dark mb-8 leading-normal">@{{ notification.body }}</p>
+            <button @click="showNotificationModal = false" class="bg-red text-white uppercase px-4 py-2 rounded">Got it!</button>
+        </div>
+    </modal>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 <script type="text/javascript"
