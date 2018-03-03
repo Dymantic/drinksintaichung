@@ -1,14 +1,13 @@
 <template>
     <div class="p-4">
-        <div class="p-4 my-4 bg-white">
-            <p class="text-red-dark text-xl mb-1 font-bold">{{ place.name }}</p>
-            <p class="text-red-dark text-sm mb-4">{{ place.type }}</p>
-            <p class="text-grey">{{ place.description }}</p>
+        <div class="p-4 my-4">
+            <p class="text-dit-red text-2xl mb-1 font-bold">{{ place.name }}</p>
+            <p class="text-black leading-normal text-xs">{{ place.description }}</p>
         </div>
         <div class="p-4 bg-white my-4">
-            <p class="text-red-dark uppercase text-sm font-bold">Address:</p>
-            <p class="text-dark my-3">{{ place.address }}</p>
-            <p class="text-dark my-3">{{ place.zh_address }}</p>
+            <p class="text-dit-red text-xs font-bold">Address:</p>
+            <p class="text-black text-xs my-3">{{ place.address }}</p>
+            <p class="text-black text-xs my-3">{{ place.zh_address }}</p>
             <div class="text-right mt-6">
                 <span class="text-red-dark uppercase border border-red-dark p-2 text-sm">Show taxi driver</span>
             </div>

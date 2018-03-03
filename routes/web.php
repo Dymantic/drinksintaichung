@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'frontpage');
 
 Route::get('api/establishments', function() {
     return \App\Establishments\Establishment::all()->map->toJsonableArray();

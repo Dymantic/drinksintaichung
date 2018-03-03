@@ -44,13 +44,16 @@ var defaultConfig = require('tailwindcss/defaultConfig')()
 */
 
 var colors = {
-    'transparent': 'transparent',
+    'dit-red': '#F16E75',
+    'dit-dark-red': '#B23E40',
+    'dit-cream': '#FCFFF5',
+    'black': '#343F4B',
+    'grey': '#BDBDBD',
 
-    'black': '#222b2f',
+    'transparent': 'transparent',
     'grey-darkest': '#364349',
     'grey-darker': '#596a73',
     'grey-dark': '#70818a',
-    'grey': '#9babb4',
     'grey-light': '#dae4e9',
     'grey-lighter': '#f3f7f9',
     'grey-lightest': '#fafcfc',
@@ -194,6 +197,7 @@ module.exports = {
 
     fonts: {
         'sans': [
+            'filson-soft',
             '-apple-system',
             'BlinkMacSystemFont',
             'Segoe UI',
@@ -422,6 +426,7 @@ module.exports = {
         'sm': '.125rem',
         default: '.25rem',
         'lg': '.5rem',
+        'xl': '.75rem',
         'full': '9999px',
     },
 
@@ -505,6 +510,7 @@ module.exports = {
         '8': '2rem',
         '10': '2.5rem',
         '12': '3rem',
+        '14': '3.5rem',
         '16': '4rem',
         '24': '6rem',
         '32': '8rem',
@@ -704,7 +710,7 @@ module.exports = {
     */
 
     shadows: {
-        default: '0 2px 4px 0 rgba(0,0,0,0.10)',
+        default: '3px 3px 4px 0 rgba(0,0,0,0.15)',
         'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
         'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
         'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',

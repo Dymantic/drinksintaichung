@@ -1,22 +1,23 @@
 <template>
-    <div class="w-9/10 bg-white mx-auto  my-4 p-4">
+    <div class="w-9/10 bg-dit-cream mx-auto  my-4 p-4 leading-normal rounded-xl">
         <div class="flex justify-between">
             <router-link :to="`/places/${place.id}`" class="no-underline">
-                <p class="font-bold mb-3 text-red text-lg">{{ place.name }}</p>
+                <p class="font-bold mb-3 text-dit-red leading-tight text-2xl">{{ place.name }}</p>
             </router-link>
             <p class="text-sm text-grey">{{ formattedDistance(place.distance) }}</p>
         </div>
-        <p class="text-grey">{{ place.description }}</p>
-        <p class="font-bold mb-1 mt-2 text-sm text-red-dark">Address:</p>
-        <p class="text-grey text-sm">
+        <p class="text-black text-xs">{{ place.description }}</p>
+        <p class="text-xs mb-1 mt-2 text-dit-red">Address:</p>
+        <p class="text-black text-xs">
             {{ place.address }}<br>{{ place.zh_address }}
         </p>
-        <div class="border-grey-light border-t mt-4 pt-4">
-            <span class="px-2"
+        <p class="text-xs mb-1 mt-4 text-dit-red">Features:</p>
+        <div class="">
+            <span class="px-2 text-dit-red"
                   v-for="(feature, index) in feature_list"
                   :key="`f_key_${index}`"
                   v-if="place.features[feature.icon_name]">
-                <span v-html="feature.icon" class="h-1"></span>
+                <span v-html="feature.icon" class=""></span>
             </span>
         </div>
 

@@ -1,7 +1,7 @@
 <style></style>
 
 <template>
-    <div class="place-list-component">
+    <div class="place-list-component bg-dit-red py-8">
         <place-card v-for="place in places" :place="place" :key="place.id"></place-card>
     </div>
 </template>

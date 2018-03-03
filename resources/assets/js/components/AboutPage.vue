@@ -1,11 +1,17 @@
 <template>
-    <div class="min-h-screen bg-red px-8 py-8">
-        <p class="text-xl text-center text-white">Welcome to<br> Drinks in Taichung</p>
-        <p class="text-white text-sm leading-normal mt-8">
-            If you live in Taichung City or have come to Taichung for a visit then you might be looking for a place to have a drink. Drinks in Taichung will help you find the place you are looking for. Maybe you want a bar to hang out with your friends and drink beer, or you are going on a date and would porefer some wine, or you just want to watch some live music or sport. This website allows you to filter your preferences and find the place that best suits your needs for a drink. Or you can just view the map and see what’s nearby you. Go ahead and play around, you’ll be amazed how many places there are to drink alcohol in Taichung.
+    <div class="min-h-screen bg-dit-red px-8 py-8">
+        <p class="text-2xl text-center text-dit-cream leading-tight">Welcome to<br> Drinks in Taichung.</p>
+        <p class="text-dit-cream text-sm leading-normal mt-8">
+            If you live in Taichung City or have come to Taichung for a visit then you might be looking for a place to have a drink. Drinks in Taichung will help you find the place you are looking for. Maybe you want a bar to hang out with your friends and drink beer, or you are going on a date and would prefer some wine, or you just want to watch some live music or sport.
         </p>
-        <p class="my-8 text-white text-sm">We also encourage our community to add venues.</p>
-        <p class="my-8 text-white text-sm text-center">Tell your friends about this awesome website:</p>
+        <p class="text-dit-cream text-sm leading-normal mt-8">
+            This free website allows you to filter your preferences and find the place that best suits your needs for a drink. Or you can just view the map and see what’s nearby you. Go ahead and play around, you’ll be amazed how many places there are to have a drink in Taichung.
+        </p>
+        <p class="my-8 text-dit-cream leading-normal text-sm">
+            We also encourage the community to <router-link class="text-dit-cream" to="/request-establishment">add venues</router-link> so that everyone has more choices of where to go for a drink.
+        </p>
+        <div class="h-1 border-b-2 border-dit-cream my-4 w-3/5 mx-auto"></div>
+        <p class="my-8 text-dit-cream text-sm text-center">Tell your friends about this awesome website:</p>
         <div class="flex justify-around">
             <span class="text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.15 46.2" height="24px">

@@ -28,6 +28,7 @@ import Establishment from "./components/Establishment.vue";
 import RequestEstablishment from "./components/RequestEstablishment";
 import AboutPage from "./components/AboutPage";
 import ThankYou from "./components/ThankYou";
+import LocationPermission from "./components/LocationPermission";
 import places from "./modules/places";
 import filter from "./modules/filters";
 import location from "./modules/location";
@@ -67,7 +68,8 @@ const app = new Vue({
             title: '',
             body: ''
         },
-        showNotificationModal: false
+        showNotificationModal: false,
+        open_location_modal: false
     },
 
     computed: {
@@ -85,6 +87,12 @@ const app = new Vue({
 
         has_location() {
             return this.$store.getters.has_location;
+        },
+
+        needs_location_permission() {
+            const known_permissions = ['granted', 'denied'];
+            const current_permission = this.$store.state.location.permission;
+            return (!this.$store.getters.is_watching_position) && (known_permissions.indexOf(current_permission) === -1);
         }
     },
 
@@ -122,12 +130,20 @@ const app = new Vue({
 
     store,
 
+    components: {
+      LocationPermission
+    },
+
     router,
 
     mounted() {
         store.dispatch('getAllPlaces');
         store.dispatch('getAllFeatures');
         store.dispatch('checkForPermissionStatus');
+
+        if(this.needs_location_permission) {
+            this.open_location_modal = true;
+        }
     },
 
     methods: {

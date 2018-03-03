@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.11 23.73" width="30px"><rect width="27.11" height="5.94" rx="0.99" ry="0.99"/><rect y="17.78" width="27.11" height="5.94" rx="0.99" ry="0.99"/><rect y="8.89" width="27.11" height="5.94" rx="0.99" ry="0.99"/></svg>
